@@ -5,108 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lokalrådet Ferritslev-Rolfsted</title>
     
-    <meta name="description" content="Officiel side for Lokalrådet Ferritslev, Rolfsted, Kappendrup, Hudevad og Søllinge. Information om vores stærke lokalsamfund, skoler og natur.">
-    <meta name="keywords" content="Lokalråd, Ferritslev, Rolfsted, Kappendrup, Hudevad, Søllinge, Faaborg-Midtfyn, lokalsamfund">
+    <meta name="description" content="Officiel side for Lokalrådet Ferritslev, Rolfsted, Kappendrup, Hudevad og Søllinge. Se hvad vores stærke lokalsamfund byder på.">
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        html, body { height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
+        html, body { min-height: 100%; margin: 0; padding: 0; }
         body { 
             font-family: 'Montserrat', sans-serif; 
-            line-height: 1.5; 
+            line-height: 1.4; 
             text-align: center; 
             display: flex;
             flex-direction: column;
             align-items: center; 
-            justify-content: center;
+            justify-content: center; /* Centrerer på desktop */
             background-image: url('Luftfoto-Ferritslev-Maj-2024.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: #1c1e21; 
+            padding: 20px 0; /* Giver luft i top og bund ved scroll */
         }
         .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
         
-        /* Selve hovedkortet (Lyst frosted glass) */
         .card { 
-            width: 95%; 
+            width: 92%; 
             max-width: 600px; 
             background: rgba(255, 255, 255, 0.25); 
-            padding: 40px 25px; 
+            padding: 30px 20px; 
             border-radius: 15px; 
             box-shadow: 0 8px 32px rgba(0,0,0,0.2);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-sizing: border-box;
-            margin: 20px;
         }
 
-        .logo { max-width: 280px; width: 85%; height: auto; margin-bottom: 10px; }
-        p.intro { font-size: 1.1rem; font-weight: 600; margin: 0; color: #1c1e21; }
-        .towns { font-size: 11px; font-weight: 400; font-style: italic; margin-top: 5px; margin-bottom: 25px; opacity: 0.9; color: #1c1e21; }
+        .logo { max-width: 250px; width: 70%; height: auto; margin-bottom: 8px; }
+        p.intro { font-size: 0.95rem; font-weight: 600; margin: 0; color: #1c1e21; }
+        .towns { font-size: 10px; font-weight: 400; font-style: italic; margin-top: 4px; margin-bottom: 15px; opacity: 0.9; }
 
-        /* Mørk Infoboks */
+        /* Mørk Infoboks - 20% lysere sort */
         .tagline-box {
-            background: rgba(0, 0, 0, 0.7); /* Mørk baggrund */
+            background: rgba(0, 0, 0, 0.5); 
             border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            color: #ffffff; /* Hvid tekst */
-            text-align: left;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            padding: 15px;
+            margin: 15px 0;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
         .tagline-header {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 15px;
-            text-align: center;
+            margin-bottom: 10px;
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
         
-        /* 2 kolonner på desktop */
+        /* Liste centrering: Centreret container, venstrestillet tekst */
+        .list-container {
+            display: inline-block;
+            text-align: left;
+        }
+
         .tagline-box ul { 
             list-style: none; 
             padding: 0; 
             margin: 0; 
             display: grid;
-            grid-template-columns: 1fr 1fr; /* 2 lige store kolonner */
-            gap: 10px;
-            font-size: 0.9rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 20px;
+            font-size: 0.85rem;
         }
         
-        .tagline-box li { 
-            font-weight: 400;
-        }
+        .tagline-box li { font-weight: 400; }
 
-        .contact-section { margin: 30px 0; }
-        h2.contact-header { font-size: 1.3rem; text-transform: uppercase; letter-spacing: 2px; margin: 0; font-weight: 700; }
-        .spacer { width: 40px; height: 3px; background-color: #1c1e21; margin: 10px auto 15px auto; border-radius: 2px; }
-        .emails { font-size: 1.1rem; font-weight: 600; }
-        .emails a { display: block; color: #1c1e21; text-decoration: none; margin: 8px 0; word-break: break-all; }
-        .emails a:hover { text-decoration: underline; }
+        .contact-section { margin: 20px 0; }
+        h2.contact-header { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin: 0; font-weight: 700; }
+        .spacer { width: 35px; height: 3px; background-color: #1c1e21; margin: 8px auto 12px auto; border-radius: 2px; }
+        .emails { font-size: 0.95rem; font-weight: 600; }
+        .emails a { display: block; color: #1c1e21; text-decoration: none; margin: 4px 0; word-break: break-all; }
 
         .btn-fb { 
             display: inline-flex; align-items: center; justify-content: center;
-            background-color: #1877F2; color: white; padding: 12px 25px; 
+            background-color: #1877F2; color: white; padding: 10px 20px; 
             text-decoration: none; border-radius: 10px; font-weight: 700; 
-            font-size: 1.1rem; transition: transform 0.2s; margin-top: 15px;
+            font-size: 0.95rem; transition: transform 0.2s; margin-top: 10px;
         }
-        .btn-fb:hover { background-color: #166fe5; transform: scale(1.02); }
-        .btn-fb img { width: 45px; height: 45px; margin-right: 15px; flex-shrink: 0; }
+        .btn-fb img { width: 35px; height: 35px; margin-right: 12px; }
 
-        .footer { margin-top: 30px; font-size: 0.8rem; font-weight: 600; opacity: 0.8; }
+        .footer { margin-top: 25px; font-size: 0.75rem; font-weight: 600; opacity: 0.8; }
 
-        /* Mobil-tilpasning */
+        /* Mobil-specifik optimering */
         @media (max-width: 500px) {
-            .tagline-box ul { 
-                grid-template-columns: 1fr; /* Hopper tilbage til 1 kolonne på mobil */
-            }
-            .card { padding: 30px 15px; }
-            .logo { max-width: 220px; }
+            body { justify-content: flex-start; padding-top: 10px; } /* Tillader scroll fra toppen */
+            .tagline-box ul { grid-template-columns: 1fr; } /* 1 kolonne på mobil */
+            .list-container { display: block; text-align: left; padding-left: 15%; } /* Giver bedre balance på mobil */
+            .card { padding: 20px 15px; margin: 10px; }
+            .logo { max-width: 180px; }
+            .tagline-box { padding: 12px; margin: 10px 0; }
+            .contact-section { margin: 15px 0; }
+            .btn-fb img { width: 30px; height: 30px; }
         }
     </style>
 </head>
@@ -117,19 +117,21 @@
         <img src="lokalraadet-f-r-logo.svg" alt="Lokalrådet logo" class="logo">
         
         <p class="intro">Vi arbejder for udvikling og fællesskab i vores lokalområde</p>
-        <p class="towns">Ferritslev, Rolfsted, Kappendrup, Hudevad og Søllinge</p>
+        <p class="towns">Ferritslev, Rolfsted, Kappendrup, Hudevad, Søllinge</p>
 
         <div class="tagline-box">
             <div class="tagline-header">Det byder vores område på:</div>
-            <ul>
-                <li>• Stærkt lokalsamfund</li> 
-                <li>• Idrætsforening</li> 
-                <li>• Træningscenter</li> 
-                <li>• Skøn natur</li>
-                <li>• 2 skoler og børnehaver</li>
-                <li>• 2 Dagligvarebutikker</li>
-                <li>• Lægehus</li> 
-            </ul>
+            <div class="list-container">
+                <ul>
+                    <li>• Stærkt lokalsamfund</li> 
+                    <li>• Idrætsforening</li> 
+                    <li>• Træningscenter</li> 
+                    <li>• Skøn natur</li>
+                    <li>• 2 skoler og børnehaver</li>
+                    <li>• 2 Dagligvarebutikker</li>
+                    <li>• Lægehus</li> 
+                </ul>
+            </div>
         </div>
 
         <div class="contact-section">
