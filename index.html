@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lokalrådet Ferritslev-Rolfsted</title>
     
-    <meta name="description" content="Officiel side for Lokalrådet Ferritslev, Rolfsted, Kappendrup, Hudevad og Søllinge. Information om vores stærke lokalsamfund, skoler og natur.">
-    <meta name="keywords" content="Lokalråd, Ferritslev, Rolfsted, Kappendrup, Hudevad, Søllinge, Faaborg-Midtfyn, lokalsamfund">
+    <meta name="description" content="Officiel side for Lokalrådet Ferritslev, Rolfsted, Kappendrup, Hudevad og Søllinge. Se hvad vores stærke lokalsamfund byder på.">
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -23,49 +22,75 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #1c1e21; 
+            color: #ffffff; /* Hvid tekst som standard */
         }
         .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
         
         .card { 
             width: 90%; 
             max-width: 550px; 
-            background: rgba(255, 255, 255, 0.25); 
+            /* Mørk frosted glass effekt */
+            background: rgba(0, 0, 0, 0.65); 
             padding: 30px 20px; 
             border-radius: 15px; 
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             box-sizing: border-box;
             margin: 20px;
         }
 
-        .logo { max-width: 260px; width: 80%; height: auto; margin-bottom: 10px; }
-        p.intro { font-size: 1rem; font-weight: 600; margin: 0; }
-        .towns { font-size: 11px; font-weight: 300; font-style: italic; margin-top: 5px; margin-bottom: 25px; opacity: 0.9; }
-
-        /* Tagline Boks Design */
-        .tagline-box {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #000;
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        /* Inverterer logoet til hvidt hvis det er sort i SVG'en, ellers kan det fjernes */
+        .logo { 
+            max-width: 260px; 
+            width: 80%; 
+            height: auto; 
+            margin-bottom: 10px;
+            filter: brightness(0) invert(1); 
         }
-        .tagline-box ul { list-style: none; padding: 0; margin: 0; }
-        .tagline-box li { margin: 5px 0; }
+
+        p.intro { font-size: 1rem; font-weight: 600; margin: 0; color: #ffffff; }
+        .towns { font-size: 11px; font-weight: 300; font-style: italic; margin-top: 5px; margin-bottom: 20px; opacity: 0.8; color: #ffffff; }
+
+        /* Tagline Boks - Liste stil */
+        .tagline-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left; /* Listen står pænere når den er venstrestillet */
+            display: inline-block;
+            width: 85%;
+        }
+        .tagline-header {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .tagline-box ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        .tagline-box li { 
+            margin: 6px 0; 
+            padding-left: 10px;
+            color: #ffffff;
+        }
 
         .contact-section { margin: 25px 0; }
-        h2.contact-header { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin: 0; font-weight: 700; }
-        .spacer { width: 40px; height: 3px; background-color: #1c1e21; margin: 10px auto 15px auto; border-radius: 2px; }
+        h2.contact-header { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin: 0; font-weight: 700; color: #ffffff; }
+        .spacer { width: 40px; height: 3px; background-color: #ffffff; margin: 10px auto 15px auto; border-radius: 2px; }
         .emails { font-size: 1rem; font-weight: 600; }
-        .emails a { display: block; color: #1c1e21; text-decoration: none; margin: 8px 0; word-break: break-all; }
-        .emails a:hover { text-decoration: underline; }
+        .emails a { display: block; color: #ffffff; text-decoration: none; margin: 8px 0; word-break: break-all; opacity: 0.9; }
+        .emails a:hover { opacity: 1; text-decoration: underline; }
 
         .btn-fb { 
             display: inline-flex; align-items: center; justify-content: center;
@@ -74,31 +99,36 @@
             font-size: 1rem; transition: transform 0.2s; margin-top: 15px;
         }
         .btn-fb:hover { background-color: #166fe5; transform: scale(1.02); }
-        .btn-fb img { width: 50px; height: 50px; margin-right: 15px; flex-shrink: 0; }
+        .btn-fb img { width: 45px; height: 45px; margin-right: 15px; flex-shrink: 0; }
 
-        .footer { margin-top: 30px; font-size: 0.75rem; font-weight: 600; opacity: 0.8; }
+        .footer { margin-top: 30px; font-size: 0.75rem; font-weight: 600; opacity: 0.6; color: #ffffff; }
 
         @media (max-width: 480px) {
             .card { padding: 25px 15px; }
             .logo { max-width: 200px; }
-            .btn-fb img { width: 40px; height: 40px; }
+            .tagline-box { width: 95%; padding: 15px; }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1 class="visually-hidden">Lokalrådet for Ferritslev, Rolfsted, Kappendrup, Hudevad og Søllinge - Officiel hjemmeside</h1>
+        <h1 class="visually-hidden">Lokalrådet for Ferritslev, Rolfsted, Kappendrup, Hudevad og Søllinge</h1>
         
-        <img src="lokalraadet-f-r-logo.svg" alt="Lokalrådet Ferritslev-Rolfsted - Repræsentant for 5 landsbyer i Faaborg-Midtfyn" class="logo">
+        <img src="lokalraadet-f-r-logo.svg" alt="Lokalrådet logo" class="logo">
         
         <p class="intro">Vi arbejder for udvikling og fællesskab i vores lokalområde</p>
         <p class="towns">Ferritslev, Rolfsted, Kappendrup, Hudevad, Søllinge</p>
 
         <div class="tagline-box">
+            <div class="tagline-header">Det byder vores område på:</div>
             <ul>
-                <li>Stærkt lokalsamfund • Skøn natur</li>
-                <li>2 skoler og børnehaver</li>
-                <li>Dagligvarebutikker og lægehus</li>
+                <li>• Stærkt lokalsamfund</li> 
+                <li>• Idrætsforening</li> 
+                <li>• Træningscenter</li> 
+                <li>• Skøn natur</li>
+                <li>• 2 skoler og børnehaver</li>
+                <li>• 2 Dagligvarebutikker</li>
+                <li>• Lægehus</li> 
             </ul>
         </div>
 
