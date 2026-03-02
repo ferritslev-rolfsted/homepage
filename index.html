@@ -164,9 +164,14 @@
             Følg med på Facebook
         </a>
         
-        <div class="footer">
-            © Lokalrådet Ferritslev-Rolfsted | Stiftet 1972
+<div class="footer">
+            &copy; <span id="year"></span> Lokalrådet Ferritslev-Rolfsted
         </div>
     </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
+
