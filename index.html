@@ -17,13 +17,13 @@
             display: flex;
             flex-direction: column;
             align-items: center; 
-            justify-content: center; /* Centrerer på desktop */
+            justify-content: center;
             background-image: url('Luftfoto-Ferritslev-Maj-2024.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: #1c1e21; 
-            padding: 20px 0; /* Giver luft i top og bund ved scroll */
+            padding: 20px 0;
         }
         .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
         
@@ -44,15 +44,19 @@
         p.intro { font-size: 0.95rem; font-weight: 600; margin: 0; color: #1c1e21; }
         .towns { font-size: 10px; font-weight: 400; font-style: italic; margin-top: 4px; margin-bottom: 15px; opacity: 0.9; }
 
-        /* Mørk Infoboks - 20% lysere sort */
+        /* Mørk Infoboks - Tilpasser sig indholdet */
         .tagline-box {
             background: rgba(0, 0, 0, 0.5); 
             border-radius: 12px;
-            padding: 15px;
-            margin: 15px 0;
+            padding: 15px 25px; /* God luft i siderne */
+            margin: 20px auto; /* 20px margin top/bund, centreret vandret */
             color: #ffffff;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            display: inline-block; /* Magien der får boksen til at krympe til indholdet */
+            max-width: 90%; /* Sikrer den ikke stikker ud af kortet */
+            box-sizing: border-box;
         }
+        
         .tagline-header {
             font-size: 0.85rem;
             font-weight: 700;
@@ -61,25 +65,21 @@
             margin-bottom: 10px;
             border-bottom: 1px solid rgba(255,255,255,0.2);
             padding-bottom: 8px;
+            text-align: center;
         }
         
-        /* Liste centrering: Centreret container, venstrestillet tekst */
-        .list-container {
-            display: inline-block;
-            text-align: left;
-        }
-
         .tagline-box ul { 
             list-style: none; 
             padding: 0; 
             margin: 0; 
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px 20px;
+            grid-template-columns: auto auto; /* Kolonner tilpasser sig tekstens bredde */
+            gap: 5px 25px;
             font-size: 0.85rem;
+            text-align: left;
         }
         
-        .tagline-box li { font-weight: 400; }
+        .tagline-box li { font-weight: 400; white-space: nowrap; } /* Undgår at teksten knækker i to linjer i boksen */
 
         .contact-section { margin: 20px 0; }
         h2.contact-header { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin: 0; font-weight: 700; }
@@ -99,13 +99,12 @@
 
         /* Mobil-specifik optimering */
         @media (max-width: 500px) {
-            body { justify-content: flex-start; padding-top: 10px; } /* Tillader scroll fra toppen */
-            .tagline-box ul { grid-template-columns: 1fr; } /* 1 kolonne på mobil */
-            .list-container { display: block; text-align: left; padding-left: 15%; } /* Giver bedre balance på mobil */
+            body { justify-content: flex-start; padding-top: 10px; }
+            .tagline-box ul { grid-template-columns: 1fr; } /* 1 kolonne på mobil for at spare plads */
+            .tagline-box li { white-space: normal; } /* Tillad tekst-knæk på meget små skærme */
             .card { padding: 20px 15px; margin: 10px; }
             .logo { max-width: 180px; }
-            .tagline-box { padding: 12px; margin: 10px 0; }
-            .contact-section { margin: 15px 0; }
+            .tagline-box { padding: 12px 20px; }
             .btn-fb img { width: 30px; height: 30px; }
         }
     </style>
@@ -121,17 +120,15 @@
 
         <div class="tagline-box">
             <div class="tagline-header">Det byder vores område på:</div>
-            <div class="list-container">
-                <ul>
-                    <li>• Stærkt lokalsamfund</li> 
-                    <li>• Idrætsforening</li> 
-                    <li>• Træningscenter</li> 
-                    <li>• Skøn natur</li>
-                    <li>• 2 skoler og børnehaver</li>
-                    <li>• 2 Dagligvarebutikker</li>
-                    <li>• Lægehus</li> 
-                </ul>
-            </div>
+            <ul>
+                <li>• Stærkt lokalsamfund</li> 
+                <li>• Idrætsforening</li> 
+                <li>• Træningscenter</li> 
+                <li>• Skøn natur</li>
+                <li>• 2 skoler og børnehaver</li>
+                <li>• 2 Dagligvarebutikker</li>
+                <li>• Lægehus</li> 
+            </ul>
         </div>
 
         <div class="contact-section">
